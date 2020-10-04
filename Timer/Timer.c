@@ -10,23 +10,23 @@ void main()
         printf("\n\t ");
         scanf("%d",&hour);
         system("cls");
-        if(hour<100) break;
+        if(hour<1000) break;
     }
 
     while(1)
     {
-        printf("\n\t %02d:",hour);
+        printf("\n\t%3d:",hour);
         scanf("%d",&minute);
         system("cls");
-        if(minute<100) break;
+        if(minute<60) break;
     }
 
     while(1)
     {
-        printf("\n\t %02d:%02d:",hour,minute);
+        printf("\n\t%3d:%02d:",hour,minute);
         scanf("%d",&second);
         system("cls");
-        if(second<100) break;
+        if(second<60) break;
     }
 
     printf("\n\t");
@@ -34,7 +34,7 @@ void main()
         for(; minute>-1; minute--,second=59)
             for(; second>-1; second--)
             {
-                printf(" %02d:%02d:%02d",hour,minute,second);
+                printf("%3d:%02d:%02d",hour,minute,second);
                 printf("\b\b\b\b\b\b\b\b\b"); Sleep(1000);
             }
 
