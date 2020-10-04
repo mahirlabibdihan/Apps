@@ -1,26 +1,33 @@
 #include<windows.h>
 #include<stdio.h>
+int hour,minute,second;
 void main()
 {
     system("mode con: lines=3 cols=27");
 
-    int hour,minute,second;
+    while(1)
+    {
+        printf("\n\t ");
+        scanf("%d",&hour);
+        system("cls");
+        if(hour<100) break;
+    }
 
     while(1)
     {
-        system("cls");
-        printf("\tHour : ");
-        scanf("%d",&hour);
-
-        printf("      Minute : ");
+        printf("\n\t %02d:",hour);
         scanf("%d",&minute);
-
-        printf("      Second : ");
-        scanf("%d",&second);
-
-        if(hour<100&minute<100&second<100) break;
+        system("cls");
+        if(minute<100) break;
     }
-    system("cls");
+
+    while(1)
+    {
+        printf("\n\t %02d:%02d:",hour,minute);
+        scanf("%d",&second);
+        system("cls");
+        if(second<100) break;
+    }
 
     printf("\n\t");
     for(; hour>-1 ; hour--,minute=59)
@@ -28,13 +35,9 @@ void main()
             for(; second>-1; second--)
             {
                 printf(" %02d:%02d:%02d",hour,minute,second);
-
-                printf("\b\b\b\b\b\b\b\b\b");
-                Sleep(1000);
+                printf("\b\b\b\b\b\b\b\b\b"); Sleep(1000);
             }
 
     printf("TIME OVER");
-    char c;
-    scanf("%c",c);
-
+    char c; scanf("%c",c);
 }
