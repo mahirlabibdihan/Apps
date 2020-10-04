@@ -6,19 +6,24 @@ void main()
 
     int hour,minute,second;
 
-    printf("\tHour : ");
-    scanf("%d",&hour);
+    while(1)
+    {
+        system("cls");
+        printf("\tHour : ");
+        scanf("%d",&hour);
 
-    printf("      Minute : ");
-    scanf("%d",&minute);
+        printf("      Minute : ");
+        scanf("%d",&minute);
 
-    printf("      Second : ");
-    scanf("%d",&second);
+        printf("      Second : ");
+        scanf("%d",&second);
 
+        if(hour<100&minute<100&second<100) break;
+    }
     system("cls");
 
     printf("\n\t");
-    for(;hour>-1 ; hour--,minute=59)
+    for(; hour>-1 ; hour--,minute=59)
         for(; minute>-1; minute--,second=59)
             for(; second>-1; second--)
             {
@@ -29,6 +34,7 @@ void main()
             }
 
     printf("TIME OVER");
-    char c;scanf("%c",c);
+    char c;
+    scanf("%c",c);
 
 }
